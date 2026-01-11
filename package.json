@@ -11,10 +11,24 @@
     "start": "node src/index.js",
     "build": "npm i"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shamsiddin-Xamroqulov/confectionery-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shamsiddin-Xamroqulov/confectionery-bot/issues"
+  },
+  "homepage": "https://github.com/Shamsiddin-Xamroqulov/confectionery-bot",
   "engines": {
     "node": ">=18"
   },
-  "keywords": ["nodejs", "telegram", "bot", "mongoose", "confectionery"],
+  "keywords": [
+    "nodejs",
+    "telegram",
+    "bot", 
+    "mongoose", 
+    "confectionery"
+  ],
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
