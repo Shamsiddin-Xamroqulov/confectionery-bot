@@ -1,0 +1,24 @@
+{
+  "name": "confectionery",
+  "version": "1.0.0",
+  "type": "module",
+  "author": "Xamroqulov Shamsiddin <xamroqulovsh7@gmail.com>",
+  "license": "MIT",
+  "description": "Confectionery helps you easily order fresh cakes, pastries, and delicious desserts directly on Telegram.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "build": "npm i"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["nodejs", "telegram", "bot", "mongoose", "confectionery"],
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "joi": "^18.0.2",
+    "node-telegram-bot-api": "^0.67.0"
+  }
+}
