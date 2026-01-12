@@ -14,4 +14,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+import("./bot/bot.js");
+
 app.listen(port, () => console.log(`Server is runinng on http://127.0.0.1:${port}`));

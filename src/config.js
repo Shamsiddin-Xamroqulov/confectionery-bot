@@ -8,6 +8,10 @@ const serverConfig = {
     server: {
         port: process.env.PORT
     },
+    bot_config: {
+        bot_token: process.env.BOT_TOKEN,
+        admin_id: process.env.ADMIN_ID
+    },
 };
 
 export default serverConfig;
