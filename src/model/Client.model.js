@@ -3,7 +3,7 @@ import serverConfig from "../config.js";
 const {client_reg_states} = serverConfig;
 
 const ClientModel = new Schema({
-    chat_id: {
+    user_id: {
         type: Number,
     },
     full_name: {
@@ -14,6 +14,10 @@ const ClientModel = new Schema({
     },
     phone_number: {
         type: String,
+    },
+    language: {
+        type: String,
+        enum: ["ru", "uz"]
     },
     status: {
         type: String,

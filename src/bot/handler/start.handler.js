@@ -5,9 +5,9 @@ const {bot_config: {admin_id}} = serverConfig;
 
 const startHandler = async (msg, chatId) => {
     if(chatId == admin_id) {
-        return adminLanguageHandler(msg);
+        return adminLanguageHandler(msg, chatId);
     }else {
-        return clientLanguageHandler(msg);
+        return clientLanguageHandler(msg, chatId);
     }
 };
 

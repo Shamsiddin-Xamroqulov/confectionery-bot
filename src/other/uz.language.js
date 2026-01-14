@@ -4,42 +4,100 @@ export const registerUzText = () => {
 
 Xush kelibsiz!  
 Botimizdan to‘liq foydalanish va buyurtma berish uchun qisqa ro‘yxatdan o‘tish jarayonidan o‘tishingiz kerak.
-
-*Ro‘yxatdan o‘tish uchun quyidagilar uchun zarur:*
-• 📦 Buyurtmalarni rasmiylashtirish  
-• 📞 Siz bilan bog‘lanish (yetkazib berish bo‘yicha)  
-• 🔔 Buyurtma holati haqida xabardor qilish  
-
-*Iltimos, quyidagi bosqichlarni ketma-ket bajaring 👇*
 `
 };
 
 export const fullNameUzText = () => {
     return `
-👤 To‘liq ismingizni kiriting
+👤 *To‘liq ismingizni kiriting*
 
 Iltimos, ismingiz va familiyangizni kiriting.
 Ushbu ma’lumot buyurtmalarni rasmiylashtirishda ishlatiladi.
 
-Misol:
+*Misol:*
 Aliyev Ali
 `
 };
 
 export const phoneNumberUzText = () => {
     return `
-📞 Telefon raqamingizni kiriting
+📞 *Telefon raqamingizni kiriting*
 
-Iltimos, biz siz bilan bog‘lana olishimiz uchun telefon raqamingizni yuboring.
+*Iltimos, biz siz bilan bog‘lana olishimiz uchun telefon raqamingizni yuboring.*
 Bu raqam quyidagi holatlar uchun ishlatiladi:
 • buyurtmani tasdiqlash  
 • yetkazib berish tafsilotlarini aniqlash  
 
-Siz:
+*Siz:*
 — raqamni qo‘lda yozishingiz mumkin  
-— yoki pastdagi «Kontaktni yuborish» tugmasini bosishingiz mumkin
+— yoki pastdagi «Contactni yuborish» tugmasini bosishingiz mumkin
 
-Misol:
+*Misol:*
 +998 90 123 45 67
+`
+};
+
+export const registerUzSuccessfullText = () => {
+    return `
+🎉 *Ro‘yxatdan o‘tish muvaffaqiyatli yakunlandi !*
+
+*Rahmat* 😊
+Endi siz mahsulotlarni ko‘rishingiz, buyurtma berishingiz
+va buyurtma holati haqida xabarlar olishingiz mumkin.
+
+*Yoqimli xaridlar tilaymiz 🍰*
+    `
+};
+
+export const aboutUzUsText = () => {
+    return `
+🏪 *BIZ HAQIMIZDA*
+
+🍰 Do‘kon nomi: Confectionery House
+📍 Manzil: Toshkent shahri, Yunusobod tumani
+📞 Telefon: +998 97 192 22 27
+
+Biz — sifatli va mazali shirinliklarni tayyorlashga ixtisoslashgan qandolat do‘konimiz.
+Har bir mahsulotimiz tabiiy masalliqlardan, gigiyena qoidalariga qat’iy rioya qilgan holda tayyorlanadi.
+
+*Bizda siz:*
+• 🎂 Buyurtma asosida tayyorlanadigan tortlar
+• 🧁 Pirojniy va desertlar
+• 🍪 Shirin pechenyelar
+• 🎉 Bayramlar uchun maxsus buyurtmalar
+
+ni topishingiz mumkin.
+
+📦 Buyurtmalar oldindan qabul qilinadi  
+🚚 Yetkazib berish mavjud  
+💬 Savollar bo‘lsa — bemalol murojaat qiling!
+
+*Sizni ko‘rishdan mamnunmiz 😊*
+    `
+};
+
+export const settingsUzClientText = () => {
+    return `
+⚙️ *SOZLAMALAR*
+
+*Bu bo‘limda siz bot sozlamalarini o‘zgartirishingiz mumkin.*
+
+*Bu yerda siz:*
+• 🌐 Ilova tilini almashtirishingiz
+• 👤 Shaxsiy ma’lumotlaringizni tahrirlashingiz
+• 📞 Telefon raqamingizni yangilashingiz
+
+*Kerakli bo‘limni tanlang yoki pastdagi tugmalardan foydalaning* 👇
+`
+};
+
+export const editingUzLanguageText = () => {
+    return `
+🌐 *TILNI O‘ZGARTIRISH*
+
+*Bu bo‘limda siz bot tilini o‘zgartirishingiz mumkin.*
+
+Iltimos, foydalanish uchun qulay bo‘lgan tilni tanlang 👇  
+Tanlangan til botda avtomatik qo‘llaniladi.
 `
 };

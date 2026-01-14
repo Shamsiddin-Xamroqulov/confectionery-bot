@@ -14,10 +14,12 @@ const serverConfig = {
     },
     client_reg_states: {
         none: "none",
+        choosing_language: "choosing_language",
         entering_full_name: "entering_full_name",
-        entering_contact: "entering_contact",
+        entering_phone_number: "entering_phone_number",
         edit_name: "edit_name",
         edit_phone: "edit_phone",
+        editing_language: "editing_language",
         successfull: "successfull"
     },
 };
