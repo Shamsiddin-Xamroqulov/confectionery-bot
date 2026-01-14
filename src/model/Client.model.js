@@ -5,17 +5,15 @@ const {client_reg_states} = serverConfig;
 const ClientModel = new Schema({
     chat_id: {
         type: Number,
-        unique: true
     },
     full_name: {
         type: String,
     },
     username: {
         type: String,
-        unique: true
     },
-    contact: {
-        type: Object
+    phone_number: {
+        type: String,
     },
     status: {
         type: String,

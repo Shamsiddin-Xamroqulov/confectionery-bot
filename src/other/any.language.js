@@ -8,7 +8,7 @@ Bu yerda siz tort, pirojniy va boshqa mazali shirinliklarga buyurtma berishingiz
 *Iltimos, davom etish uchun tilni tanlang* 👇
 
 
-🍰 *Здравствуйте ${msg.from.firs_name ? msg.from.first_name : msg.from.username} !*
+🍰 *Здравствуйте ${msg.from.first_name ? msg.from.first_name : msg.from.username} !*
 
 Добро пожаловать в наш бот для заказа сладостей 😊  
 Здесь вы можете заказать торты, пирожные и другие вкусные десерты.
