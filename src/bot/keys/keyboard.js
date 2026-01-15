@@ -81,7 +81,7 @@ export const adminRuMenuKeyboard = () => ({
     [{ text: "📦 Заказы" }, { text: "📊 Статистика" }],
     [{ text: "⚙️ Настройки" }],
   ],
-  resize_keyboard: true
+  resize_keyboard: true,
 });
 
 export const adminUzMenuKeyboard = () => ({
@@ -90,5 +90,23 @@ export const adminUzMenuKeyboard = () => ({
     [{ text: "📦 Buyurtmalar" }, { text: "📊 Statistika" }],
     [{ text: "⚙️ Sozlamalar" }],
   ],
-  resize_keyboard: true
+  resize_keyboard: true,
+});
+
+export const productUzMenuKeyboard = () => ({
+  keyboard: [
+    [{ text: "➕ Mahsulot qo‘shish" }],
+    [{ text: "✏️ Mahsulotni tahrirlash" }, { text: "🗑️ Mahsulotni o‘chirish" }],
+    [{ text: "⬅️ Asosiy menyu" }],
+  ],
+  resize_keyboard: true,
+});
+
+export const productRuMenuKeyboard = () => ({
+  keyboard: [
+    [{ text: "➕ Добавить товар" }],
+    [{ text: "✏️ Редактировать товар" }, { text: "🗑️ Удалить товар" }],
+    [{ text: "⬅️ Главное меню" }],
+  ],
+  resize_keyboard: true,
 });

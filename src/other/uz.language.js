@@ -101,3 +101,19 @@ Iltimos, foydalanish uchun qulay bo‘lgan tilni tanlang 👇
 Tanlangan til botda avtomatik qo‘llaniladi.
 `
 };
+
+export const productUzMenuText = () => {
+    return `
+🛒 MAHSULOTLAR MENYUSI
+
+Bu bo‘lim orqali siz do‘kondagi mahsulotlarni boshqarishingiz mumkin.
+
+Bu yerda siz:
+• ➕ Yangi mahsulot qo‘shishingiz
+• ✏️ Mavjud mahsulotlarni tahrirlashingiz
+• 🗑️ Keraksiz mahsulotlarni o‘chirishingiz
+
+Kerakli amalni tanlash uchun pastdagi tugmalardan foydalaning 👇    
+`
+};
+

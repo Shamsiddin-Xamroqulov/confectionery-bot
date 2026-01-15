@@ -5,8 +5,8 @@ import { aboutRuUs, backChoosingSettingsRu, backSettingsRuClient, chooseUzLangua
 import startHandler from "./handler/start.handler.js";
 import serverConfig from "../config.js";
 import AdminModel from "../model/Admin.model.js";
-import { adminUzMenu } from "./handler/admin.handler.js";
-import { adminRuMenu } from "./handler/admin.ru.handler.js";
+import { adminUzMenu, backUzAdminMenu, productUzMenu } from "./handler/admin.handler.js";
+import { adminRuMenu, backRuAdminMenu, productRuMenu } from "./handler/admin.ru.handler.js";
 const {client_reg_states} = serverConfig;
 
 bot.on("message", async (msg) => {
@@ -23,16 +23,18 @@ bot.on("message", async (msg) => {
     };
     if(findAdmin && findAdmin.language == "ru") {
         if(text == "🛒 Меню товаров") return productRuMenu(chatId);
+        if(text == "⬅️ Главное меню") return backRuAdminMenu(chatId);
     };
     if(findAdmin && findAdmin.language == "uz") {
         if(text == "🛒 Mahsulotlar menyusi") return productUzMenu(chatId);
+        if(text == "⬅️ Asosiy menyu") return backUzAdminMenu(chatId);
     };
     if(findClient) {
         if (text == "🇷🇺 Русский" && findClient.step == client_reg_states.choosing_language) return registerRuValidateHandler(chatId);
         if (text == "🇺🇿 Uzbek" && findClient.step == client_reg_states.choosing_language) return registerUzValidateHandler(chatId);
         if (text == "📝 Регистрация") return nameRuValidateHandler(msg, chatId);
         if (text == "📝 Ro'yxatdan o'tish") return nameUzValidateHandler(msg, chatId);
-    }
+    };
 
     // Client Ru
     if(findClient && findClient.language == "ru") {
