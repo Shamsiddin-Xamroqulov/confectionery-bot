@@ -101,8 +101,7 @@ export const settingsRuClient = async (chatId) => {
   });
 };
 
-export const backSettingsRuClient = (chatId, message_id) => {
-  bot.deleteMessage(chatId, message_id);
+export const backSettingsRuClient = (chatId) => {
   bot.sendMessage(chatId, "🏠 Главное меню", {
     reply_markup: clientRuMenu(),
   });

@@ -5,8 +5,14 @@ export const languageKeyboard = () => ({
 });
 
 export const editingLanguageKeyboard = () => ({
-  uzLanguageKeyboard: [[{text: "🇺🇿 Uzbek"}], [{text: "⬅️ Вернутся в Настройках"}]],
-  ruLanguageKeyboard: [[{text: "🇷🇺 Русский"}], [{text: "⬅️ Sozlamalarga qaytish"}]],
+  uzLanguageKeyboard: [
+    [{ text: "🇺🇿 Uzbek" }],
+    [{ text: "⬅️ Вернутся в Настройках" }],
+  ],
+  ruLanguageKeyboard: [
+    [{ text: "🇷🇺 Русский" }],
+    [{ text: "⬅️ Sozlamalarga qaytish" }],
+  ],
 });
 
 export const registerRuKeyboard = () => ({
@@ -67,4 +73,22 @@ export const settingsRuKeyboard = () => ({
     [{ text: "⬅️ Назад" }],
   ],
   resize_keyboard: true,
+});
+
+export const adminRuMenuKeyboard = () => ({
+  keyboard: [
+    [{ text: "🛒 Меню товаров" }],
+    [{ text: "📦 Заказы" }, { text: "📊 Статистика" }],
+    [{ text: "⚙️ Настройки" }],
+  ],
+  resize_keyboard: true
+});
+
+export const adminUzMenuKeyboard = () => ({
+  keyboard: [
+    [{ text: "🛒 Mahsulotlar menyusi" }],
+    [{ text: "📦 Buyurtmalar" }, { text: "📊 Statistika" }],
+    [{ text: "⚙️ Sozlamalar" }],
+  ],
+  resize_keyboard: true
 });

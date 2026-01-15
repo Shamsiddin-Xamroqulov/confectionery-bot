@@ -99,3 +99,37 @@ export const editingRuLanguageText = () => {
 `
 };
 
+export const adminRuMenuText = () => {
+    return `
+🛠️ *ПАНЕЛЬ УПРАВЛЕНИЯ АДМИНИСТРАТОРА*
+
+*Добро пожаловать, Администратор !* 👋  
+В этом разделе вы можете полностью управлять работой магазина.
+
+*Здесь вы можете:*
+• 📦 Просматривать и управлять заказами
+• 👥 Контролировать список клиентов
+• 🍰 Добавлять и редактировать товары
+• 📊 Просматривать отчёты и статистику
+• ⚙️ Управлять системными настройками
+
+*Выберите нужный раздел, используя меню ниже* 👇`
+};
+
+export const adminUzMenuText = () => {
+    return `
+🛠️ *ADMIN BOSHQARUV PANELI*
+
+*Xush kelibsiz, Admin !* 👋  
+Bu bo‘lim orqali siz do‘kon faoliyatini to‘liq boshqarishingiz mumkin.
+
+*Bu yerda siz:*
+• 📦 Buyurtmalarni ko‘rish va boshqarish
+• 👥 Mijozlar ro‘yxatini kuzatish
+• 🍰 Mahsulotlarni qo‘shish va tahrirlash
+• 📊 Hisobot va statistikani ko‘rish
+• ⚙️ Tizim sozlamalarini boshqarish
+
+*Kerakli bo‘limni tanlash uchun pastdagi menyudan foydalaning* 👇
+`
+};

@@ -113,8 +113,7 @@ export const settingsUzClient = (chatId) => {
   });
 };
 
-export const backSettingsUzClient = (chatId, message_id) => {
-  bot.deleteMessage(chatId, message_id);
+export const backSettingsUzClient = (chatId) => {
   bot.sendMessage(chatId, "🏠 Asosiy Menu", {
     reply_markup: clientUzMenu(),
   });

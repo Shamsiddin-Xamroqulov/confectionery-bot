@@ -1,7 +1,7 @@
 import {Schema, model} from "mongoose";
 
 const AdminModel = new Schema({
-    chat_id: {
+    user_id: {
         type: Number,
         unique: true
     },
@@ -12,6 +12,10 @@ const AdminModel = new Schema({
     phone_number: {
         type: String,
         unique: true
+    },
+    language: {
+        type: String,
+        enum: ["ru", "uz"]
     },
     status: {
         type: String,
