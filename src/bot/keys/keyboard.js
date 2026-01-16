@@ -59,7 +59,6 @@ export const settingsUzKeyboard = () => ({
   keyboard: [
     [{ text: "🌐 Tilni o‘zgartirish" }],
     [{ text: "👤 Shaxsiy ma’lumotlar" }],
-    [{ text: "📞 Telefon raqamini yangilash" }],
     [{ text: "⬅️ Ortga qaytish" }],
   ],
   resize_keyboard: true,
@@ -69,7 +68,6 @@ export const settingsRuKeyboard = () => ({
   keyboard: [
     [{ text: "🌐 Изменить язык" }],
     [{ text: "👤 Личные данные" }],
-    [{ text: "📞 Обновить номер телефона" }],
     [{ text: "⬅️ Назад" }],
   ],
   resize_keyboard: true,
@@ -120,6 +118,24 @@ export const settingsAdminUzMenuKeyboard = () => ({
   keyboard: [
     [{ text: "🌐 Tilni o‘zgartirish" }],
     [{ text: "⬅️ Asosiy menyu" }],
+  ],
+  resize_keyboard: true,
+});
+
+export const personalInfoUzKeyboard = () => ({
+  keyboard: [
+    [{ text: "📝 Ism va familiyani yangilash" }],
+    [{ text: "📞 Telefon raqamini yangilash" }],
+    [{ text: "⬅️ Sozlamalarga qaytish" }],
+  ],
+  resize_keyboard: true,
+});
+
+export const personalInfoRuKeyboard = () => ({
+  keyboard: [
+    [{ text: "📝 Обновить имя и фамилию" }],
+    [{ text: "📞 Обновить номер телефона" }],
+    [{ text: "⬅️ Вернутся в Настройках" }],
   ],
   resize_keyboard: true,
 });

@@ -2,8 +2,13 @@ import ClientModel from "../../model/Client.model.js";
 import { clientLanguageText } from "../../other/any.language.js";
 import {
   aboutUzUsText,
+  editingPhoneNumberUzText,
   editingUzLanguageText,
+  fullNameEditingSuccessfullUzText,
+  fullNameEditingUzText,
   fullNameUzText,
+  personalInfoUzText,
+  phoneNumberEditingSuccessfullUzText,
   phoneNumberUzText,
   registerUzSuccessfullText,
   registerUzText,
@@ -15,6 +20,7 @@ import {
   contactUzKeyboard,
   editingLanguageKeyboard,
   languageKeyboard,
+  personalInfoUzKeyboard,
   registerUzKeyboard,
   settingsRuKeyboard,
   settingsUzKeyboard,
@@ -74,24 +80,27 @@ export const phoneNumberUzValidateHandler = async (chatId, text) => {
   });
 };
 
-export const registerUzSuccessfully = async (chatId, phone_number, text) => {
-  if (phone_number) {
+export const registerUzSuccessfully = async (chatId, contact) => {
+  if (contact) {
     await ClientModel.findOneAndUpdate(
       { user_id: chatId },
-      { phone_number, step: client_reg_states.successfull }
+      {
+        phone_number: contact.phone_number,
+        step: client_reg_states.successfull,
+      }
     );
     bot.sendMessage(chatId, registerUzSuccessfullText(), {
       reply_markup: clientUzMenu(),
       parse_mode: "Markdown",
     });
   } else {
-    const { error, value } = phoneUzSchema.validate(text, {
+    const { error, value } = phoneUzSchema.validate(contact, {
       abortEarly: false,
     });
     if (error) return bot.sendMessage(chatId, error.message);
     await ClientModel.findOneAndUpdate(
       { user_id: chatId },
-      { phone_number: value, step: successfull }
+      { phone_number: value, step: client_reg_states.successfull }
     );
     bot.sendMessage(chatId, registerUzSuccessfullText(), {
       reply_markup: clientUzMenu(),
@@ -142,7 +151,65 @@ export const chooseRuLanguage = async (chatId) => {
 };
 
 export const backChoosingSettingsUz = (chatId) => {
-  bot.sendMessage(chatId, "⚙️ Sozlamalar", {
+  bot.sendMessage(chatId, settingsUzClientText(), {
     reply_markup: settingsUzKeyboard(),
+  });
+};
+
+export const personalInfoUz = (chatId) => {
+  bot.sendMessage(chatId, personalInfoUzText(), {
+    reply_markup: personalInfoUzKeyboard(),
+    parse_mode: "Markdown",
+  });
+};
+
+export const editingPhoneNumberUz = async (chatId) => {
+  await ClientModel.findOneAndUpdate(
+    { user_id: chatId },
+    { step: client_reg_states.edit_phone }
+  );
+  bot.sendMessage(chatId, editingPhoneNumberUzText(), {
+    reply_markup: contactUzKeyboard(),
+    parse_mode: "Markdown",
+  });
+};
+
+export const phoneNumberEditingSuccessfullUz = async (chatId, contact) => {
+  if (contact.phone_number) {
+    await ClientModel.findOneAndUpdate(
+      { user_id: chatId },
+      {
+        phone_number: contact.phone_number,
+        step: client_reg_states.successfull,
+      }
+    );
+    bot.sendMessage(chatId, phoneNumberEditingSuccessfullUzText(), {
+      reply_markup: personalInfoUzKeyboard(),
+    });
+  }else {
+    const {error, value} = phoneUzSchema.validate(contact, {abortEarly: false});
+    if(error) return bot.sendMessage(chatId, error.message);
+    await ClientModel.findOneAndUpdate({user_id: chatId}, {phone_number: value, step: client_reg_states.successfull});
+    bot.sendMessage(chatId, phoneNumberEditingSuccessfullUzText(), {
+      reply_markup: personalInfoUzKeyboard(),
+    });
+  };
+};
+
+export const fullNameEditingUz = async (chatId) => {
+  await ClientModel.findOneAndUpdate({user_id: chatId}, {step: client_reg_states.edit_full_name});
+  bot.sendMessage(chatId, fullNameEditingUzText(), {
+    reply_markup: {
+      remove_keyboard: true
+    },
+  });
+};
+
+export const fullNameEditingSuccessfullUz = async (chatId, text) => {
+  const {error, value} = fullNameUzSchema.validate(text, {abortEarly: false});
+  if(error) return bot.sendMessage(chatId, error.message);
+  await ClientModel.findOneAndUpdate({user_id: chatId}, {full_name: value, step: client_reg_states.successfull});
+  bot.sendMessage(chatId, fullNameEditingSuccessfullUzText(), {
+    reply_markup: personalInfoUzKeyboard(),
   });
 };

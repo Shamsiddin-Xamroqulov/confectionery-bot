@@ -1,14 +1,14 @@
 export const registerUzText = () => {
-    return `
+  return `
 📝 *RO‘YXATDAN O‘TISH*
 
 Xush kelibsiz!  
 Botimizdan to‘liq foydalanish va buyurtma berish uchun qisqa ro‘yxatdan o‘tish jarayonidan o‘tishingiz kerak.
-`
+`;
 };
 
 export const fullNameUzText = () => {
-    return `
+  return `
 👤 *To‘liq ismingizni kiriting*
 
 Iltimos, ismingiz va familiyangizni kiriting.
@@ -16,11 +16,11 @@ Ushbu ma’lumot buyurtmalarni rasmiylashtirishda ishlatiladi.
 
 *Misol:*
 Aliyev Ali
-`
+`;
 };
 
 export const phoneNumberUzText = () => {
-    return `
+  return `
 📞 *Telefon raqamingizni kiriting*
 
 *Iltimos, biz siz bilan bog‘lana olishimiz uchun telefon raqamingizni yuboring.*
@@ -34,11 +34,11 @@ Bu raqam quyidagi holatlar uchun ishlatiladi:
 
 *Misol:*
 +998 90 123 45 67
-`
+`;
 };
 
 export const registerUzSuccessfullText = () => {
-    return `
+  return `
 🎉 *Ro‘yxatdan o‘tish muvaffaqiyatli yakunlandi !*
 
 *Rahmat* 😊
@@ -46,11 +46,11 @@ Endi siz mahsulotlarni ko‘rishingiz, buyurtma berishingiz
 va buyurtma holati haqida xabarlar olishingiz mumkin.
 
 *Yoqimli xaridlar tilaymiz 🍰*
-    `
+    `;
 };
 
 export const aboutUzUsText = () => {
-    return `
+  return `
 🏪 *BIZ HAQIMIZDA*
 
 🍰 Do‘kon nomi: Confectionery House
@@ -73,11 +73,11 @@ ni topishingiz mumkin.
 💬 Savollar bo‘lsa — bemalol murojaat qiling!
 
 *Sizni ko‘rishdan mamnunmiz 😊*
-    `
+    `;
 };
 
 export const settingsUzClientText = () => {
-    return `
+  return `
 ⚙️ *SOZLAMALAR*
 
 *Bu bo‘limda siz bot sozlamalarini o‘zgartirishingiz mumkin.*
@@ -88,22 +88,22 @@ export const settingsUzClientText = () => {
 • 📞 Telefon raqamingizni yangilashingiz
 
 *Kerakli bo‘limni tanlang yoki pastdagi tugmalardan foydalaning* 👇
-`
+`;
 };
 
 export const editingUzLanguageText = () => {
-    return `
+  return `
 🌐 *TILNI O‘ZGARTIRISH*
 
 *Bu bo‘limda siz bot tilini o‘zgartirishingiz mumkin.*
 
 Iltimos, foydalanish uchun qulay bo‘lgan tilni tanlang 👇  
 Tanlangan til botda avtomatik qo‘llaniladi.
-`
+`;
 };
 
 export const adminUzMenuText = () => {
-    return `
+  return `
 🛠️ *ADMIN BOSHQARUV PANELI*
 
 *Xush kelibsiz, Admin !* 👋  
@@ -117,26 +117,26 @@ Bu bo‘lim orqali siz do‘kon faoliyatini to‘liq boshqarishingiz mumkin.
 • ⚙️ Tizim sozlamalarini boshqarish
 
 *Kerakli bo‘limni tanlash uchun pastdagi menyudan foydalaning* 👇
-`
+`;
 };
 
 export const productUzMenuText = () => {
-    return `
+  return `
 🛒 MAHSULOTLAR MENYUSI
 
 Bu bo‘lim orqali siz do‘kondagi mahsulotlarni boshqarishingiz mumkin.
 
 Bu yerda siz:
-• ➕ Yangi mahsulot qo‘shishingiz
-• ✏️ Mavjud mahsulotlarni tahrirlashingiz
-• 🗑️ Keraksiz mahsulotlarni o‘chirishingiz
+• ➕ Mahsulot qo‘shish
+• ✏️ Mahsulotlarni tahrirlash
+• 🗑️ Mahsulotlarni o‘chirish
 
 Kerakli amalni tanlash uchun pastdagi tugmalardan foydalaning 👇    
-`
+`;
 };
 
 export const settingsAdminUzMenuText = () => {
-    return `
+  return `
 ⚙️ *ADMIN SOZLAMALARI*
 
 *Bu bo‘lim orqali siz admin panel sozlamalarini boshqarishingiz mumkin.*
@@ -146,5 +146,56 @@ Bu yerda siz:
 • 🔐 Admin sozlamalarini yangilashingiz
 • ⚙️ Tizim parametrlari bilan ishlashingiz mumkin
 
-*Kerakli bo‘limni tanlash uchun pastdagi tugmalardan foydalaning* 👇`
+*Kerakli bo‘limni tanlash uchun pastdagi tugmalardan foydalaning* 👇`;
+};
+
+export const personalInfoUzText = () => {
+  return `
+👤 *SHAXSIY MA’LUMOTLAR*
+
+*Bu bo‘limda siz shaxsiy ma’lumotlaringizni ko‘rish va yangilashingiz mumkin.*
+
+Bu yerda siz:
+• 📝 Ism va familiyangizni yangilashingiz
+• 📞 Telefon raqamingizni o‘zgartirishingiz
+
+*Kerakli amalni tanlash uchun pastdagi tugmalardan foydalaning* 👇`;
+};
+
+export const editingPhoneNumberUzText = () => {
+  return `
+📞 *TELEFON RAQAMNI TAHRIRLASH*
+
+*Iltimos, yangi telefon raqamingizni yuboring.*
+
+Raqamni quyidagi formatlardan birida kiritishingiz mumkin:
+• +998 97 123 45 67
+• +998971234567
+• 998971234567
+• 97 123 45 67
+
+*Yoki pastdagi tugma orqali telefon raqamingizni yuborishingiz mumkin* 👇`;
+};
+
+export const fullNameEditingUzText = () => {
+  return `
+📝 ISM VA FAMILYANI YANGILASH
+
+Iltimos, yangi ism va familiyangizni yuboring.  
+
+Masalan: John Doe`;
+};
+
+export const fullNameEditingSuccessfullUzText = () => {
+  return `
+✅ Ism va familiya muvaffaqiyatli yangilandi!
+
+Sizning shaxsiy ma’lumotlaringiz endi yangilangan holda saqlanadi.`;
+};
+
+export const phoneNumberEditingSuccessfullUzText = () => {
+  return `
+✅ Telefon raqam muvaffaqiyatli yangilandi!
+
+Endi sizning kontakt raqamingiz tizimda yangilangan holda saqlanadi.`;
 };

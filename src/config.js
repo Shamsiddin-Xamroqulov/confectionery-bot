@@ -16,7 +16,7 @@ const serverConfig = {
     choosing_language: "choosing_language",
     entering_full_name: "entering_full_name",
     entering_phone_number: "entering_phone_number",
-    edit_name: "edit_name",
+    edit_full_name: "edit_full_name",
     edit_phone: "edit_phone",
     editing_language: "editing_language",
     successfull: "successfull",

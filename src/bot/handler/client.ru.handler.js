@@ -1,8 +1,13 @@
 import ClientModel from "../../model/Client.model.js";
 import {
   abuotRuUsText,
+  editingPhoneNumberRuText,
   editingRuLanguageText,
+  fullNameEditingRuText,
+  fullNameEditingSuccessfullRuText,
   fullNameRuText,
+  personalInfoRuText,
+  phoneNumberEditingSuccessfullRuText,
   phoneNumberRuText,
   registerRuSuccessfullText,
   registerRuText,
@@ -14,6 +19,7 @@ import {
   contactRuKeyboard,
   editingLanguageKeyboard,
   languageKeyboard,
+  personalInfoRuKeyboard,
   registerRuKeyboard,
   settingsRuKeyboard,
   settingsUzKeyboard,
@@ -21,6 +27,7 @@ import {
 import serverConfig from "../../config.js";
 import {
   fullNameRuSchema,
+  fullNameUzSchema,
   phoneRuSchema,
 } from "../../utils/validator/user.validator.js";
 import { settingsUzClientText } from "../../other/uz.language.js";
@@ -62,24 +69,27 @@ export const phoneNumberRuValidateHandler = async (chatId, text) => {
   });
 };
 
-export const registerRuSuccessfully = async (chatId, phone_number, text) => {
-  if (phone_number) {
+export const registerRuSuccessfully = async (chatId, contact) => {
+  if (contact.phone_number) {
     await ClientModel.findOneAndUpdate(
       { user_id: chatId },
-      { phone_number, step: client_reg_states.successfull }
+      {
+        phone_number: contact.phone_number,
+        step: client_reg_states.successfull,
+      }
     );
     bot.sendMessage(chatId, registerRuSuccessfullText(), {
       reply_markup: clientRuMenu(),
       parse_mode: "Markdown",
     });
   } else {
-    const { error, value } = phoneRuSchema.validate(text, {
+    const { error, value } = phoneRuSchema.validate(contact, {
       abortEarly: false,
     });
     if (error) return bot.sendMessage(chatId, error.message);
     await ClientModel.findOneAndUpdate(
       { user_id: chatId },
-      { phone_number: value, step: successfull }
+      { phone_number: value, step: client_reg_states.successfull }
     );
     bot.sendMessage(chatId, registerRuSuccessfullText(), {
       reply_markup: clientRuMenu(),
@@ -132,5 +142,75 @@ export const chooseUzLanguage = async (chatId) => {
 export const backChoosingSettingsRu = (chatId) => {
   bot.sendMessage(chatId, settingsRuClientText(), {
     reply_markup: settingsRuKeyboard(),
+    parse_mode: "Markdown",
+  });
+};
+
+export const personalInfoRu = (chatId) => {
+  bot.sendMessage(chatId, personalInfoRuText(), {
+    reply_markup: personalInfoRuKeyboard(),
+    parse_mode: "Markdown",
+  });
+};
+
+export const editingPhoneNumberRu = async (chatId) => {
+  await ClientModel.findOneAndUpdate(
+    { user_id: chatId },
+    { step: client_reg_states.edit_phone }
+  );
+  bot.sendMessage(chatId, editingPhoneNumberRuText(), {
+    reply_markup: contactRuKeyboard(),
+    parse_mode: "Markdown",
+  });
+};
+
+export const phoneNumberEditingSuccessfullRu = async (chatId, contact) => {
+  if (contact.phone_number) {
+    await ClientModel.findOneAndUpdate(
+      { user_id: chatId },
+      {
+        phone_number: contact.phone_number,
+        step: client_reg_states.successfull,
+      }
+    );
+    bot.sendMessage(chatId, phoneNumberEditingSuccessfullRuText(), {
+      reply_markup: personalInfoRuKeyboard(),
+    });
+  } else {
+    const { error, value } = phoneRuSchema.validate(contact, {
+      abortEarly: false,
+    });
+    if (error) return bot.sendMessage(chatId, error.message);
+    await ClientModel.findOneAndUpdate(
+      { user_id: chatId },
+      { phone_number: value, step: client_reg_states.successfull }
+    );
+    bot.sendMessage(chatId, phoneNumberEditingSuccessfullRuText(), {
+      reply_markup: personalInfoRuKeyboard(),
+    });
+  }
+};
+
+export const fullNameEditingRu = async (chatId) => {
+  await ClientModel.findOneAndUpdate(
+    { user_id: chatId },
+    { step: client_reg_states.edit_full_name }
+  );
+  bot.sendMessage(chatId, fullNameEditingRuText(), {
+    reply_markup: {
+      remove_keyboard: true,
+    },
+  });
+};
+
+export const fullNameEditingSuccessfullRu = async (chatId, text) => {
+  const { error, value } = fullNameUzSchema.validate(text, {abortEarly: false});
+  if (error) return bot.sendMessage(chatId, error.message);
+  await ClientModel.findOneAndUpdate(
+    { user_id: chatId },
+    { full_name: value, step: client_reg_states.successfull }
+  );
+  bot.sendMessage(chatId, fullNameEditingSuccessfullRuText(), {
+    reply_markup: personalInfoRuKeyboard(),
   });
 };
