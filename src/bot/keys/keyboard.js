@@ -110,3 +110,16 @@ export const productRuMenuKeyboard = () => ({
   ],
   resize_keyboard: true,
 });
+
+export const settingsAdminRuMenuKeyboard = () => ({
+  keyboard: [[{ text: "🌐 Изменить язык" }], [{ text: "⬅️ Главное меню" }]],
+  resize_keyboard: true,
+});
+
+export const settingsAdminUzMenuKeyboard = () => ({
+  keyboard: [
+    [{ text: "🌐 Tilni o‘zgartirish" }],
+    [{ text: "⬅️ Asosiy menyu" }],
+  ],
+  resize_keyboard: true,
+});

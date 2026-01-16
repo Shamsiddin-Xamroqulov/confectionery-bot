@@ -130,7 +130,7 @@ export const chooseUzLanguage = async (chatId) => {
 };
 
 export const backChoosingSettingsRu = (chatId) => {
-  bot.sendMessage(chatId, "⚙️ Настройки", {
+  bot.sendMessage(chatId, settingsRuClientText(), {
     reply_markup: settingsRuKeyboard(),
   });
 };

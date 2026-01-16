@@ -116,24 +116,6 @@ export const adminRuMenuText = () => {
 *Выберите нужный раздел, используя меню ниже* 👇`
 };
 
-export const adminUzMenuText = () => {
-    return `
-🛠️ *ADMIN BOSHQARUV PANELI*
-
-*Xush kelibsiz, Admin !* 👋  
-Bu bo‘lim orqali siz do‘kon faoliyatini to‘liq boshqarishingiz mumkin.
-
-*Bu yerda siz:*
-• 📦 Buyurtmalarni ko‘rish va boshqarish
-• 👥 Mijozlar ro‘yxatini kuzatish
-• 🍰 Mahsulotlarni qo‘shish va tahrirlash
-• 📊 Hisobot va statistikani ko‘rish
-• ⚙️ Tizim sozlamalarini boshqarish
-
-*Kerakli bo‘limni tanlash uchun pastdagi menyudan foydalaning* 👇
-`
-};
-
 export const productRuMenuText = () => {
     return `
 🛒 МЕНЮ ТОВАРОВ
@@ -146,5 +128,20 @@ export const productRuMenuText = () => {
 • 🗑️ Удалять ненужные товары
 
 Выберите нужное действие, используя кнопки ниже 👇
+`
+};
+
+export const settingsAdminRuMenuText = () => {
+    return `
+⚙️ *НАСТРОЙКИ АДМИНИСТРАТОРА*
+
+*В этом разделе вы можете управлять настройками панели администратора.*
+
+Здесь вы можете:
+• 🌐 Изменить язык бота
+• 🔐 Обновить настройки администратора
+• ⚙️ Работать с системными параметрами
+
+*Выберите нужный пункт, используя кнопки ниже* 👇
 `
 };

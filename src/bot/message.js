@@ -5,8 +5,8 @@ import { aboutRuUs, backChoosingSettingsRu, backSettingsRuClient, chooseUzLangua
 import startHandler from "./handler/start.handler.js";
 import serverConfig from "../config.js";
 import AdminModel from "../model/Admin.model.js";
-import { adminUzMenu, backUzAdminMenu, productUzMenu } from "./handler/admin.handler.js";
-import { adminRuMenu, backRuAdminMenu, productRuMenu } from "./handler/admin.ru.handler.js";
+import { adminUzMenu, backSettingsUzMenu, backUzAdminMenu, chooseLanguageAdminUz, editingLanguageAdminUz, productUzMenu, settingsAdminUzMenu } from "./handler/admin.handler.js";
+import { adminRuMenu, backRuAdminMenu, backSettingsRuMenu, chooseLanguageAdminRu, editingLanguageAdminRu, productRuMenu, settingsAdminRuMenu } from "./handler/admin.ru.handler.js";
 const {client_reg_states} = serverConfig;
 
 bot.on("message", async (msg) => {
@@ -17,18 +17,32 @@ bot.on("message", async (msg) => {
 
     if (msg.chat.type !== "private") return;
     if (text == "/start") return startHandler(msg, chatId);
+    
+    // Admin
     if(findAdmin && !(findAdmin.language)) {
         if(text == "🇷🇺 Русский") return adminRuMenu(chatId);
         if(text == "🇺🇿 Uzbek") return adminUzMenu(chatId);
     };
+    // Admin Ru
     if(findAdmin && findAdmin.language == "ru") {
         if(text == "🛒 Меню товаров") return productRuMenu(chatId);
         if(text == "⬅️ Главное меню") return backRuAdminMenu(chatId);
+        if(text == "⚙️ Настройки") return settingsAdminRuMenu(chatId);
+        if(text == "🌐 Изменить язык") return editingLanguageAdminRu(chatId);
+        if(text == "🇺🇿 Uzbek") return chooseLanguageAdminRu(chatId);
+        if(text == "⬅️ Вернутся в Настройках") return backSettingsRuMenu(chatId);
     };
+    // Admin Uz
     if(findAdmin && findAdmin.language == "uz") {
         if(text == "🛒 Mahsulotlar menyusi") return productUzMenu(chatId);
         if(text == "⬅️ Asosiy menyu") return backUzAdminMenu(chatId);
+        if(text == "⚙️ Sozlamalar") return settingsAdminUzMenu(chatId);
+        if(text == "🌐 Tilni o‘zgartirish") return editingLanguageAdminUz(chatId);
+        if(text == "🇷🇺 Русский") return chooseLanguageAdminUz(chatId);
+        if(text == "⬅️ Sozlamalarga qaytish") return backSettingsUzMenu(chatId);
     };
+
+    // Client
     if(findClient) {
         if (text == "🇷🇺 Русский" && findClient.step == client_reg_states.choosing_language) return registerRuValidateHandler(chatId);
         if (text == "🇺🇿 Uzbek" && findClient.step == client_reg_states.choosing_language) return registerUzValidateHandler(chatId);

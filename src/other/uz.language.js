@@ -102,6 +102,24 @@ Tanlangan til botda avtomatik qo‘llaniladi.
 `
 };
 
+export const adminUzMenuText = () => {
+    return `
+🛠️ *ADMIN BOSHQARUV PANELI*
+
+*Xush kelibsiz, Admin !* 👋  
+Bu bo‘lim orqali siz do‘kon faoliyatini to‘liq boshqarishingiz mumkin.
+
+*Bu yerda siz:*
+• 📦 Buyurtmalarni ko‘rish va boshqarish
+• 👥 Mijozlar ro‘yxatini kuzatish
+• 🍰 Mahsulotlarni qo‘shish va tahrirlash
+• 📊 Hisobot va statistikani ko‘rish
+• ⚙️ Tizim sozlamalarini boshqarish
+
+*Kerakli bo‘limni tanlash uchun pastdagi menyudan foydalaning* 👇
+`
+};
+
 export const productUzMenuText = () => {
     return `
 🛒 MAHSULOTLAR MENYUSI
@@ -117,3 +135,16 @@ Kerakli amalni tanlash uchun pastdagi tugmalardan foydalaning 👇
 `
 };
 
+export const settingsAdminUzMenuText = () => {
+    return `
+⚙️ *ADMIN SOZLAMALARI*
+
+*Bu bo‘lim orqali siz admin panel sozlamalarini boshqarishingiz mumkin.*
+
+Bu yerda siz:
+• 🌐 Bot tilini o‘zgartirishingiz
+• 🔐 Admin sozlamalarini yangilashingiz
+• ⚙️ Tizim parametrlari bilan ishlashingiz mumkin
+
+*Kerakli bo‘limni tanlash uchun pastdagi tugmalardan foydalaning* 👇`
+};
